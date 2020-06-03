@@ -1,25 +1,34 @@
+//Bismillah
+//This program is to check the given number is prime or not
+// code is developed by A. R. Ansari, Parbhani, Maharashtra,India.
+// for any bug pls report to ansarirahim1@gmail.com
+// code is designed for linux as well as windows ..just we need to change macro __WINDOWS__ or __LINUX__
 
-#include <stdio.h>
+//Prime numbers are positive, non-zero numbers that have exactly two factors -- no more, no less.
+#include <stdio.h> // for accepting input from keyboard and to display on the screen //has defination of  standard input and output function
+
+//#include <conio.h> //clear screen
+#include <stdlib.h> //clear screen
+#include <ctype.h>  // to check alphanumeric or not
+#include "stringC.h"
 
 int main()
-{int i;
-    int Number;
-    int Count=0;
-    printf("\nEnter the Number");
-    scanf("%d",&Number);
- printf("\nYou have entered the Number=%d",Number);
- 
- for(i=2;i<Number;i++)
- {
-        if(Number%i==0)   
-       { ///printf("\nFactor=%d",i);
-       Count++;
-       }
-     
- }
- if(Count>0)
- printf("\nThe number is Not Prime Number");
- else
- printf("\nThe number is Prime Number");
-    return 0;
+{
+   //int inValid=0;
+   //int i, j;
+   //int Number;
+   //int Count = 0;
+   char numberString[20];
+
+   //clrscr();
+   // //for linux
+   ClearScreen(__WINDOWS__);
+   //for windows
+   printf("\nPrime numbers are positive, non-zero numbers that have exactly two factors -- no more, no less.\n");
+
+   printf("\nEnter the Number\n");
+   gets(numberString);
+   trimLeading(numberString);
+   checkPrimeNumberInArray(numberString);
+   return 0;
 }
