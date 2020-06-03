@@ -1,0 +1,3 @@
+#!/bin/bash
+#linux only
+gcc main.c stringC.c -o main
