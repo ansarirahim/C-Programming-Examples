@@ -22,7 +22,7 @@ int main()
 
    //clrscr();
    // //for linux
-   ClearScreen(__WINDOWS__);
+   ClearScreen(__LINUX__);
    //for windows
    printf("\nPrime numbers are positive, non-zero numbers that have exactly two factors -- no more, no less.\n");
 
