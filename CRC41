@@ -1,0 +1,26 @@
+BYTE getNVM_CRC(BYTE *CKBlock,BYTE Seed)    // uint32_t Length, BYTE Seed)
+{
+	BYTE val, y, crc, bbit1;
+	uint32_t k;
+	crc = Seed;
+	for (k = 0; k < 256; k++)
+	{
+		val = CKBlock[k];
+		crc = crc ^ ((val << 4));
+		for (y = 0; y < 8; y++)
+		{
+			bbit1 = crc & 0x80;
+			if (bbit1)
+			{
+				crc = crc ^ 74;
+				bbit1 = 1;
+			}
+			else
+				bbit1 = 0;
+			crc = ((crc << 1) + bbit1);
+		}
+		crc = crc ^ 82;
+		crc = crc ^ (val >> 4);
+	}
+	return (crc);
+}
