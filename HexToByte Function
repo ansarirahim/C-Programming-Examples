@@ -6,3 +6,27 @@ unsigned char hex2byte(const char *hex)
     iss >> std::hex >> byte;
     return byte % 0x100;
 }
+
+
+
+BYTE CharToHex(char ch)
+{
+    // Convert to upper case
+    ch = toupper(ch);
+
+    // Parse nibble
+    if (ch >= '0' && ch <= '9')
+    {
+        return (ch - '0');
+    }
+    else if (ch >= 'A' && ch <= 'F')
+    {
+        return (ch - 'A' + 10);
+    }
+    else
+    {
+        // Bad input character
+        assert(false);
+        return 0; // to suppress warning C4715
+    }
+}
