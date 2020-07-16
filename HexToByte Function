@@ -1,0 +1,8 @@
+
+unsigned char hex2byte(const char *hex)
+{
+    unsigned short byte = 0;
+    std::istringstream iss(hex);
+    iss >> std::hex >> byte;
+    return byte % 0x100;
+}
