@@ -1,0 +1,13 @@
+ 
+ void UpdateAfileWithClearLastContents(char *filename)
+ {
+ memset(fileName,'\0',100);
+        sprintf(fileName,"CRC41.%s",csFileNames[ig].filename);
+         ///   printf("\n\nClear and updated at %d %s\n",ig,csFileNames[ig].filename);// fileName);//ig,csFileNames[ig].filename);
+            fstream f2(fileName, f2.out | f2.trunc);
+          
+         
+            f2 << (unsigned int)Crc << endl;
+        
+            f2.close();
+            }
