@@ -1,0 +1,21 @@
+static int SerachCharInArray(char *s, char c)
+{
+    for(int i=0;i<100;i++)
+{
+    if(s[i]=='\0')
+return 0;
+    if(s[i]==c)
+return 1+i;
+
+
+}
+}
+
+
+example:
+if(SerachCharInArray(fileName, 'N')&&SerachCharInArray(fileName, 'V')&& SerachCharInArray(fileName, 'M'))
+sprintf(memType,"%s","NVM");
+else
+if(SerachCharInArray(fileName, 'F')&&SerachCharInArray(fileName, 'L')&& SerachCharInArray(fileName, 'A')&& SerachCharInArray(fileName, 'S')&& SerachCharInArray(fileName, 'H'))
+sprintf(memType,"%s","FLASH");
+
